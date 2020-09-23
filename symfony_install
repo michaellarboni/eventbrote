@@ -1,0 +1,7 @@
+symfony new eventbrote --full
+
+symfony serve --help
+
+sc --help
+
+sc make:controller EventsController
