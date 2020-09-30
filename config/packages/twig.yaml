@@ -1,2 +1,6 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+
+    # The default format options used by the date filter
+    date:
+        format:               'd/m/Y H:i:s'
