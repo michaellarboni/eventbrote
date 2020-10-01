@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title event.name %}
+
+{% block body %}
+    <div class="row ">
+        <div class="col-md-6 mx-auto">
+            <article class="event bg-white rounded shadow">
+                <div class="mw-100 overflow-hidden rounded-top">
+                </div>
+                <div class="p-3">
+                    <h1 class="h5 text-muted text-secondary">{{ event.name }}</h1>
+
+                    <h3 class="text-break pt-3">Date:</h3>
+                    <p class="text-break pt-3">{{ event.startsAt|date }}</p>
+
+                    <h3 class="text-break pt-3">Location:</h3>
+                    <p class="text-break pt-3">{{ event.location }}</p>
+
+                    <h3 class="text-break pt-3">Price:</h3>
+                    <p class="text-break pt-3">{{ formatPrice(event) }}</p>
+                </div>
+            </article>
+            <a href="{{ path('app_events') }}">Retour</a>
+        </div>
+    </div>
+
+{% endblock %}
