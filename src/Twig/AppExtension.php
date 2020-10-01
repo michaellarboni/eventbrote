@@ -9,7 +9,6 @@ use Twig\TwigFunction;
 
 class AppExtension extends AbstractExtension
 {
-
     public function getFunctions(): array
     {
         return [
@@ -32,9 +31,10 @@ class AppExtension extends AbstractExtension
     public function formatPrice(Event $event): string
     {
         if ($event->isFree()) {
-            return 'Free!';
-        } else {
-            return $event->getPrice() . '€';
+            return 'FREE!';
         }
+
+        return $event->getPrice() . '€';
+
     }
 }
