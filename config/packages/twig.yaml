@@ -3,4 +3,10 @@ twig:
 
     # The default format options used by the date filter
     date:
-        format:               'd/m/Y H:i:s'
+        format: 'd/m/Y H:i:s'
+
+    # The default format options for the number_format filter
+    number_format:
+        decimals:             2
+        decimal_point:        ,
+        thousands_separator:  ' '
