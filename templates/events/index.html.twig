@@ -6,17 +6,20 @@
 
     <ul>
         {% for event in events %}
-            <article>
-                <header>
-                    <h2><a href="{{ path('app_events_show', {id:event.id}) }}">{{ event.name }}</a></h2>
-                </header>
-
-                <ul>
-                    <li><strong>Date:</strong>{{ event.startsAt|date }}</li>
-                    <li><strong>Location: </strong>{{ event.location }}</li>
-                    <li><strong>Price: </strong>{{ formatPrice(event) }}</li>
-                </ul>
-            </article>
+            <div class="container">
+                <div class="row">
+                    <article class="col-md-6">
+                        <ul>
+                            <li>
+                                <p style="color:#d1410c; font-weight: 600;">{{ event.startsAt|date }}</p>
+                                <p><a href="{{ path('app_events_show', {id:event.id}) }}">{{ event.name }}</a></p>
+        {#                        <p><strong>Location: </strong>{{ event.location }}</p>#}
+        {#                        <p><strong>Price: </strong>{{ formatPrice(event) }}</p>#}
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
         {%  endfor %}
     </ul>
 
