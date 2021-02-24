@@ -13,6 +13,6 @@ class HomeController extends AbstractController
      */
     public function index(): RedirectResponse
     {
-        return $this->redirectToRoute("app_events");
+        return $this->redirectToRoute("app_event");
     }
 }

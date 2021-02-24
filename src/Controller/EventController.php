@@ -8,10 +8,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\EventRepository;
 
-class EventsController extends AbstractController
+class EventController extends AbstractController
 {
     /**
-     * @Route("/events" , name="app_events")
+     * @Route("/event" , name="app_event")
      * @param EventRepository $repo
      * @return Response
      */
@@ -19,16 +19,16 @@ class EventsController extends AbstractController
     {
         $events = $repo->findAll();
 
-        return $this->render('/events/index.html.twig', compact('events'));
+        return $this->render('/event/index.html.twig', compact('events'));
     }
 
     /**
-     * @Route("/events/{id<[0-9]+>}", name="app_events_show", methods="GET")
+     * @Route("/event/{id<[0-9]+>}", name="app_event_show", methods="GET")
      * @param Event $event
      * @return Response
      */
     public function show(Event $event) : Response
     {
-        return $this->render('/events/show.html.twig', compact('event'));
+        return $this->render('/event/show.html.twig', compact('event'));
     }
 }
