@@ -2,16 +2,23 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Eventbrote{% endblock %}</title>
         {% block stylesheets %}
+            <link rel="icon" type="image/x-icon" href="../public/images/favicon-16x16.png" />
+{#            <link rel="icon" type="image/png" href="../public/images/favicon-16x16.png" sizes="16x16">#}
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+{#            <link rel="stylesheet" href="../public/css/app.css">#}
         {% endblock %}
     </head>
     <body>
-    <main class="container mt-5">
-        {% block body %}
-        {% endblock %}
-    </main>
-        {% block javascripts %}{% endblock %}
+
+    {{ include('events/partials/_nav.html.twig') }}
+
+        <main class="container mt-5">
+            {% block body %}
+            {% endblock %}
+        </main>
+            {% block javascripts %}{% endblock %}
+
     </body>
 </html>
